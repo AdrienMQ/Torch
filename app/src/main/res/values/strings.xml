@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Torch</string>
+    <string name="permdesc_flashlight"> </string>
+    <string name="permlab_flashlight"> </string>
+    <string name="light_off">LIGHT OFF</string>
+    <string name="blink">BLINK</string>
+    <string name="torch_light">_____ | Torch light | _____</string>
+    <string name="text_on">__ ON __</string>
+    <string name="text_off">__ OFF __</string>
+</resources>
