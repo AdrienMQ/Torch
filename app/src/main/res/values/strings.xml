@@ -8,4 +8,7 @@
     <string name="text_on">__ ON __</string>
     <string name="text_off">__ OFF __</string>
     <string name="stNotSupported">-YOUR DEVICE DOES NOT HAVE FLAHLIGHTS-</string>
+    <string name="eco">ECO</string>
+    <string name="text_eco">__ ECO __</string>
+    <string name="text_blink">__ BLINK __</string>
 </resources>
