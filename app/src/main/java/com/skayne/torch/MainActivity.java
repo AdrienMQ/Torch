@@ -18,6 +18,21 @@ import static android.view.View.VISIBLE;
 
 @RequiresApi(api = Build.VERSION_CODES.M)
 
+//DESIGN TO DOs :
+//TODO Landscape design
+//TODO Change drawable to have no pixels (look dpi)
+//TODO Add a thin green circle to show it's checked
+//TODO Change transition to get a smooth continuity
+//TODO Change image settings and link it to java
+//TODO See design with Maud Pillet
+//CODE TO DOs :
+//TODO Check service (better than threads?)
+//TODO Add a setting screen (what kind? segment, activity, ...)
+//TODO Try referencing app
+//TODO Add settings option : mode, own mode
+//TODO Process light mode with integer tables
+//TODO Default mode and other manageable modes
+
 public class MainActivity extends Activity {
     private static final int REF_TORCHLIGHT = 1;
     private static final int REF_BLINKLIGHT = 2;
