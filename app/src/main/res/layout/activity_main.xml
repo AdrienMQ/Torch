@@ -20,35 +20,45 @@
         android:layout_marginTop="66dp"
         android:text="@string/torch_light" />
 
-    <!-- Button ON/OFF -->
-    <ToggleButton
-        android:id="@+id/toggleButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/title"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:onClick="changeLightState" />
-
-    <!-- Button blink -->
-    <ToggleButton
-        android:id="@+id/blinkButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/toggleButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:onClick="changeLightMode"
-        android:textOff="@string/blink"
-        android:textOn="@string/blink" />
-
-    <!-- Text information -->
     <TextView
         android:id="@+id/textLight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/blinkButton"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="24dp"
         android:text="@string/light_off" />
+
+    <ToggleButton
+        android:id="@+id/blinkButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/toggleButton"
+        android:layout_alignStart="@+id/toggleButton"
+        android:layout_below="@+id/toggleButton"
+        android:layout_marginTop="57dp"
+        android:onClick="changeLightMode"
+        android:textOff="@string/blink"
+        android:textOn="@string/blink" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/notSupported"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="121dp"
+        android:onClick="changeLightState" />
+
+    <TextView
+        android:id="@+id/notSupported"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/title"
+        android:gravity="center"
+        android:text="@string/stNotSupported"
+        android:textColor="#e5b40000"
+        android:textStyle="bold" />
 </RelativeLayout>

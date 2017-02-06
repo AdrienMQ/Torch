@@ -7,4 +7,5 @@
     <string name="torch_light">_____ | Torch light | _____</string>
     <string name="text_on">__ ON __</string>
     <string name="text_off">__ OFF __</string>
+    <string name="stNotSupported">-YOUR DEVICE DOES NOT HAVE FLAHLIGHTS-</string>
 </resources>

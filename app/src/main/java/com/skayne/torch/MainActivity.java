@@ -4,6 +4,7 @@ package com.skayne.torch;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraManager;
 import android.os.Build;
@@ -13,6 +14,7 @@ import android.support.annotation.RequiresApi;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 //More specific import
@@ -23,8 +25,10 @@ public class MainActivity extends Activity {
     Context context = this;
     boolean bBlink = false;
     boolean bTorch = false;
+    boolean hasFlash;
 
     private TextView textView;
+    private TextView notSupported;
     private Button btTorch;
     private Button btBlink;
     private Handler handler;
@@ -35,26 +39,35 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         textView = (TextView) findViewById(R.id.textLight);
         btTorch = (Button) findViewById(R.id.toggleButton);
         btBlink = (Button) findViewById(R.id.blinkButton);
+        notSupported = (TextView) findViewById(R.id.notSupported);
+        textView.setVisibility(View.INVISIBLE);
         textView.setVisibility(View.INVISIBLE);
 
         handler = new Handler();
+
+        hasFlash = context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH);
+        if (!hasFlash) {
+            Toast.makeText(this, "The device has no integrated flash.", Toast.LENGTH_LONG).show();
+            textView.setVisibility(View.VISIBLE);
+        }
     }
 
     public void changeLightState(View view) {
         boolean checked = ((ToggleButton) view).isChecked();
         Thread torchThread = new Thread(new TorchManagerThread());
 
-        if (checked) {
+        if (hasFlash && checked) {
             textView.setText(R.string.text_on);
             textView.setVisibility(View.VISIBLE);
             bTorch = true;
 
             //Start thread
             torchThread.start();
-        } else {
+        } else if (hasFlash) {
             textView.setText(R.string.text_off);
             bTorch = false;
         }
