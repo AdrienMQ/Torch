@@ -1,53 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.skayne.torch.MainActivity">
-
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="66dp"
-        android:text="@string/torch_light" />
-
-    <TextView
-        android:id="@+id/textLight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/blinkButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
-        android:text="@string/light_off" />
-
-    <ToggleButton
-        android:id="@+id/blinkButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/torchButton"
-        android:layout_alignStart="@+id/torchButton"
-        android:layout_below="@+id/torchButton"
-        android:layout_marginTop="57dp"
-        android:onClick="onBlink"
-        android:textOff="@string/blink"
-        android:textOn="@string/blink" />
-
-    <ToggleButton
-        android:id="@+id/torchButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textSupported"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="121dp"
-        android:onClick="onTorch" />
 
     <TextView
         android:id="@+id/textSupported"
@@ -61,15 +24,77 @@
         android:textColor="#e5b40000"
         android:textStyle="bold" />
 
-    <ToggleButton
-        android:id="@+id/ecoButton"
+
+    <TextView
+        android:id="@+id/advice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/torchButton"
-        android:layout_alignRight="@+id/torchButton"
-        android:layout_below="@+id/textSupported"
-        android:layout_marginTop="45dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp" />
+
+    <ToggleButton
+        android:id="@+id/torchButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/primary_custom"
+        android:onClick="onTorch"
+        android:textOff=""
+        android:textOn="" />
+
+    <ToggleButton
+        android:id="@+id/blinkButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_above="@id/torchButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/secondary_custom"
+        android:onClick="onBlink"
+        android:textOff=""
+        android:textOn="" />
+
+    <ToggleButton
+        android:id="@+id/ecoButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignLeft="@+id/blinkButton"
+        android:layout_alignStart="@+id/blinkButton"
+        android:layout_below="@id/torchButton"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/secondary_custom"
         android:onClick="onEco"
-        android:textOff="@string/eco"
-        android:textOn="@string/eco" />
+        android:textOff=""
+        android:textOn="" />
+
+    <Button
+        android:id="@+id/settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/torchButton"
+        android:layout_alignBottom="@+id/torchButton"
+        android:layout_marginLeft="43dp"
+        android:layout_marginStart="43dp"
+        android:layout_toEndOf="@+id/torchButton"
+        android:layout_toRightOf="@+id/torchButton"
+        android:background="@android:drawable/ic_menu_help" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="46dp"
+        android:text="@string/torch_light" />
+
+    <TextView
+        android:id="@+id/textLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="@string/light_off" />
 </RelativeLayout>
